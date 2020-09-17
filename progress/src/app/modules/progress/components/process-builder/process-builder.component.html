@@ -1,3 +1,15 @@
 <div class="process-builder-component">
-  <stepper [(value)]="stepsCount"></stepper>
+  <div class="app-block controls-wrapper">
+    <mat-card>
+      <!-- <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Steps count:</mat-label>
+        </mat-form-field>
+      </div> -->
+      <div>
+        <app-counter [(value)]="stepsCount" [min]="1" [max]="10"></app-counter>
+      </div>
+    </mat-card>
+  </div>
+  
 </div>

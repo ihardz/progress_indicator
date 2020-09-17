@@ -1,1 +1,1 @@
-export * from './stepper/stepper.component';
+export * from './counter/counter.component';

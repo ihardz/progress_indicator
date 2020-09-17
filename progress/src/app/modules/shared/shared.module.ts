@@ -1,16 +1,19 @@
-import { StepperComponent } from './components/stepper/stepper.component';
+import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 
+import { CounterComponent } from './components';
+
 @NgModule({
   imports: [
+    CommonModule,
     MatIconModule
   ],
   declarations: [
-    StepperComponent
+    CounterComponent
   ],
   exports: [
-    StepperComponent
+    CounterComponent
   ]
 })
 export class SharedModule {

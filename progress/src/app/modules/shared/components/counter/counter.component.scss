@@ -1,0 +1,73 @@
+ @import '_variables';
+
+$border-width: 2px;
+$border-radius: 4px;
+$color-border: $color-violet;
+$color-border-disabled: $color-border-grey;
+$color-text: $color-violet;
+$color-background-button-primary: $color-violet-opacity;
+$color-background-button-secondary: $color-violet;
+$color-background-disabled: $color-background-grey;
+ 
+$color-white: #FFFFFF;
+
+@mixin unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.counter-component {
+  padding: 4px;
+  display: flex;
+  flex-direction: row;
+  .btn,
+  .value {
+    padding: 4px;
+    * {
+      color: $color-violet;
+      @include unselectable;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.minus,
+    &.plus {
+      cursor: pointer;
+      border: $border-width solid $color-border;
+      background-color: $color-background-button-primary;      
+      mat-icon {
+        height: 1em;
+        font-size: 1.5em;
+        width: 1em;
+      }
+      &.disabled {
+        opacity: .5;
+      }
+      &.enabled {
+        &:hover {
+          background-color: $color-violet; 
+          .mat-icon {
+            color: $color-white;
+          }
+        }
+        &.active {
+          opacity: .8;
+        } 
+      }           
+    }
+    &.minus {
+      border-radius: $border-radius 0 0 $border-radius;
+      border-right: none;
+    }
+    &.plus {
+      border-radius: 0 $border-radius $border-radius 0;
+      border-left: none;
+    }    
+  }
+  .value{
+    border: $border-width solid $color-border;
+    width: 3em;
+  }
+}
