@@ -1,1 +1,13 @@
-<mat-progress-bar></mat-progress-bar>
+
+<div class="progress-indicator" [class.disposing]="progress.currentStep===progress.totalSteps">
+  <div class="card">
+    <div class="card-header">
+      Process: {{progress.processId}}
+    </div>
+    <div class="card-body">  
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" [style.width]="width" [attr.aria-valuenow]="value" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>  
+</div>

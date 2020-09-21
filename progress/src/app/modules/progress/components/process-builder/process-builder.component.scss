@@ -1,5 +1,11 @@
-.process-builder-component {
-  .controls-wrapper {
-    width: 40em;
+:host {
+  .card {
+    .card-body {
+      .card-line {
+        margin-bottom: 1em;
+        display: flex;
+        justify-content: space-evenly;        
+      }
+    }
   }
 }

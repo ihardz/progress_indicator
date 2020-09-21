@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+
+<div *ngIf="!initialized">
+  Loading...
+</div>
+<div *ngIf="initialized && !settingsLoaded" >
+  Something went wrong :(
+</div>
+<router-outlet *ngIf="settingsLoaded"></router-outlet>

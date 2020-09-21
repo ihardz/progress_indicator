@@ -1,0 +1,6 @@
+.progress-indicator {
+  opacity: 1;
+  &.disposing {
+    opacity: .5;
+  }
+}

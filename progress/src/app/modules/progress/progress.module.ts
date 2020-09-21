@@ -1,56 +1,42 @@
-import { StoreComponent } from './pages/store/store/store.component';
-import { CartComponent } from './pages/store/cart/cart.component';
-import { MatCardModule } from '@angular/material/card';
+import { ProgressSignalrService } from './progress-signalr.service';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { ProcessBuilder, ProgressIndicator } from './components';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatIconModule } from '@angular/material/icon';
 import { ProcessComponent } from './pages';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProgressListComponent } from './components/progress-list/progress-list.component';
 
 const ROUTES: Routes = [
   { 
     path: '', 
     component: ProcessComponent,
     pathMatch: 'full'
-  },
-  {
-    path: '',
-    component: CartComponent
   }
 ];
 
 @NgModule({
   imports: [
-    MatProgressBarModule,
-    MatIconModule,
-    MatCardModule,
-    MatFormFieldModule,
+    CommonModule,
     SharedModule,
-    RouterModule.forChild(ROUTES)
+    RouterModule.forChild(ROUTES),
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     ProgressIndicator,
     ProcessBuilder,
     ProcessComponent,
-
-    StoreComponent,
-    CartComponent
+    ProgressListComponent,
+    ProgressIndicator
   ],
   exports: [
     RouterModule
-  ]
-  // ,
-  // exports: [
-  //   ProgressIndicator,
-  //   ProcessBuilder,
-  //   ProcessComponent
-  // ],
-  // entryComponents:[
-  //   ProcessComponent
-  // ]
+  ],
+  providers: [
+    ProgressSignalrService
+  ]  
 })
 export class ProgressModule {
 }

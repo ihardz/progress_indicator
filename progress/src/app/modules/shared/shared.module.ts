@@ -1,19 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 
 import { CounterComponent } from './components';
+import { IconPlusComponent } from './components/icons';
+import { IconDashComponent } from './components/icons/icon-dash.component';
 
 @NgModule({
   imports: [
-    CommonModule,
-    MatIconModule
+    CommonModule
   ],
   declarations: [
-    CounterComponent
+    CounterComponent,
+    IconPlusComponent,
+    IconDashComponent
   ],
   exports: [
-    CounterComponent
+    CounterComponent,
+    IconPlusComponent,
+    IconDashComponent
   ]
 })
 export class SharedModule {

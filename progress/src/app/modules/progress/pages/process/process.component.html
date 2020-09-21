@@ -1,8 +1,8 @@
 <div class="process-component">
-  <div>
-    <process-builder></process-builder>
+  <div class="section">
+    <app-process-builder (processStart)="handleProcessStart($event)"></app-process-builder>
   </div>
-  <div>
-    <progress-indicator></progress-indicator>
+  <div class="section">
+    <app-progress-list></app-progress-list>
   </div>
 </div>

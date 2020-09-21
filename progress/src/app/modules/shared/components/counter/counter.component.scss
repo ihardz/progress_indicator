@@ -1,6 +1,6 @@
  @import '_variables';
 
-$border-width: 2px;
+$border-width: 1px;
 $border-radius: 4px;
 $color-border: $color-violet;
 $color-border-disabled: $color-border-grey;
@@ -10,6 +10,7 @@ $color-background-button-secondary: $color-violet;
 $color-background-disabled: $color-background-grey;
  
 $color-white: #FFFFFF;
+$opacity-disabled: .5;
 
 @mixin unselectable {
   -moz-user-select: none;
@@ -19,7 +20,6 @@ $color-white: #FFFFFF;
 }
 
 .counter-component {
-  padding: 4px;
   display: flex;
   flex-direction: row;
   .btn,
@@ -37,18 +37,14 @@ $color-white: #FFFFFF;
       cursor: pointer;
       border: $border-width solid $color-border;
       background-color: $color-background-button-primary;      
-      mat-icon {
-        height: 1em;
-        font-size: 1.5em;
-        width: 1em;
-      }
+      font-size: 1.5em;
       &.disabled {
-        opacity: .5;
+        opacity: $opacity-disabled;
       }
       &.enabled {
         &:hover {
           background-color: $color-violet; 
-          .mat-icon {
+          * {
             color: $color-white;
           }
         }
@@ -68,6 +64,12 @@ $color-white: #FFFFFF;
   }
   .value{
     border: $border-width solid $color-border;
-    width: 3em;
+    width: 3em;    
+  }
+}
+
+:host([disabled]) {
+  .value {
+    opacity: $opacity-disabled;
   }
 }

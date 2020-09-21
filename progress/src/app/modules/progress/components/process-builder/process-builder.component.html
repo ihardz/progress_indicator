@@ -1,15 +1,25 @@
 <div class="process-builder-component">
-  <div class="app-block controls-wrapper">
-    <mat-card>
-      <!-- <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Steps count:</mat-label>
-        </mat-form-field>
-      </div> -->
-      <div>
-        <app-counter [(value)]="stepsCount" [min]="1" [max]="10"></app-counter>
-      </div>
-    </mat-card>
+  <div class="card">
+    <div class="card-header">
+      Process setup
+    </div>
+    <div class="card-body"> 
+      <form [formGroup]="processForm" (ngSubmit)="handleSubmit($event)">
+        <div class="card-line">
+          <div class="card-inline-item">
+            <label>Steps Count</label>
+            <app-counter [min]="1" [max]="10" formControlName="stepsCount"></app-counter>
+          </div>
+          <div class="card-inline-item">
+            <label>Step delay (seconds)</label>
+            <app-counter [min]="1" [max]="10" formControlName="stepDelay"></app-counter>
+          </div>
+        </div>      
+        <button type="submit" class="btn btn-primary btn-block">Start process</button>
+      </form> 
+      
+    </div>
   </div>
   
 </div>
+

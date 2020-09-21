@@ -1,11 +1,11 @@
 <div class="counter-component">
   <div #minus [ngClass]="['btn', CLASS_MINUS, minusDisabled? 'disabled': 'enabled']" (click)="minusDisabled || handleButtonClick(minus, CLASS_MINUS)">
-    <mat-icon>remove</mat-icon>
+    <app-icon-dash></app-icon-dash>
   </div>
   <div class="value">
     <span>{{value}}</span>
   </div>
   <div #plus [ngClass]="['btn', CLASS_PLUS, plusDisabled? 'disabled': 'enabled']"  (click)="plusDisabled || handleButtonClick(plus, CLASS_PLUS)">
-    <mat-icon>add</mat-icon>
+    <app-icon-plus></app-icon-plus>
   </div>
 </div>
